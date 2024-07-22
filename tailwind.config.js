@@ -1,18 +1,49 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{jsx}",
+    "./src/app/**/*.{jsx}",
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily:{
+        "danaMedium":"danaMedium",
+        "danaBold":"danaBold",
+        "danaBlack":"danaBlack"
       },
+      fontSize:{
+        'md':"2rem"
+      },
+      colors:{
+        "back":"#111111",
+        "primary":{
+          default:"#FF0000",
+          100:"#FC4343"
+        },
+        "secondary":"#161616",
+        "success":"#303033",
+        "font":{
+          default:"#8B8A91",
+          100:"#D5C1E0"
+        }
+      }
     },
+    container:{
+      "center":true,
+    },
+    screens:{
+      'xs':"380px",
+
+      'sm':"576px", 
+
+      'md':"768px",
+
+      'lg':"992px",
+
+      'xl':"1220px",
+
+      '2xl':"1420px",
+    }
   },
   plugins: [],
 };
