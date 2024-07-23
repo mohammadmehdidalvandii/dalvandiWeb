@@ -16,6 +16,13 @@
         src: url('/public/assets/font/Dana-Black.woff') format(woff);
     }
     body{
-        @apply m-0 py-0 px-3 box-border text-base text-font-default font-danaMedium font-semibold bg-back;
+        @apply m-0 py-0 px-3 box-border text-base text-font-default font-danaMedium font-semibold bg-black;
+    }
+}
+
+
+@layer components{
+    .btn-primary{
+        @apply flex items-center justify-center w-[120px] h-10 bg-primary-100 text-white font-semibold text-xl rounded-lg ease-out duration-300 hover:bg-primary-default;
     }
 }
