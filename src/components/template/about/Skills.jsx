@@ -3,7 +3,7 @@ import React from "react";
 
 function Skills() {
   return (
-    <section className="block mt-12 w-full">
+    <section className="block my-12 w-full">
       <div className="block">
         <div className="block">
           <Title title="مهارت های من" />
