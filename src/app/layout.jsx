@@ -16,11 +16,11 @@ export default function RootLayout({ children }) {
       <body dir="rtl" className={inter.className}>
         <Navbar/>
         <div className="container mt-8">
-          <div className="flex gap-4 flex-col lg:flex-row">
+          <div className="flex gap-12 flex-col lg:flex-row">
               <div className="block w-full lg:w-[25%]">
                 <Avatar/>
               </div>
-              <div className="block w-full lg:w-[75%] bg-green-600">
+              <div className="block w-full lg:w-[75%]">
                  {children}  
               </div>
           </div>

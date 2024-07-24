@@ -1,8 +1,11 @@
+import Headline from '@/components/template/home/Headline/Headline'
 import React from 'react'
 
 function Home() {
   return (
-  <div>Home</div>
+  <>
+  <Headline/>
+  </>
   )
 }
 
