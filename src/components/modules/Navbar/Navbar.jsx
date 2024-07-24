@@ -21,7 +21,7 @@ function Navbar() {
                             <Link href='/' className='block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white hover:scale-110'>خانه</Link>
                         </li>
                         <li className="block ">
-                            <Link href='/' className='block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white hover:scale-110'>درباره من</Link>
+                            <Link href='/AboutMe' className='block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white hover:scale-110'>درباره من</Link>
                         </li>
                         <li className="block ">
                             <Link href='/' className='block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white hover:scale-110'>نمونه کار</Link>
