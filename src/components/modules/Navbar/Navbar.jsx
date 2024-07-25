@@ -26,13 +26,10 @@ function Navbar() {
                         <li className="block ">
                             <Link href='/SampleWork' className='block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white hover:scale-110'>نمونه کار</Link>
                         </li>
-                        <li className="block ">
-                            <Link href='/' className='block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white hover:scale-110'>رزومه</Link>
-                        </li>
                     </ul>
                 </div>
                 <div className="flex">
-                    <Link href='/' className='btn-primary'>تماس با من</Link>
+                    <Link href='/Contact' className='btn-primary'>تماس با من</Link>
                 </div>
             </div>
             {/* Responsive for mobile */}
