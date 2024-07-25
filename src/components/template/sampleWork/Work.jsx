@@ -5,7 +5,7 @@ import { FaSearch } from 'react-icons/fa'
 
 function Work() {
   return (
-    <section className="block w-full">
+    <section className="block w-full mb-8">
         <div className="block">
             <div className="block">
                 <Title title="نمونه کار ها"/>
