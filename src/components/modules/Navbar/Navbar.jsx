@@ -1,10 +1,20 @@
 "use client"
 import Link from 'next/link'
-import React, { useState } from 'react'
+import { usePathname } from 'next/navigation';
+import React, { useEffect, useState } from 'react'
 import {FaBars, FaTimes} from "react-icons/fa"
 
 function Navbar() {
     const [navMenu , setNavMenu] = useState(false);
+    const [routeMenu , setRouteMenu] = useState('/');
+    const pathRoute = usePathname(); // get route menu name
+
+
+    // change Route Navbar Menu
+    useEffect(()=>{
+        const pathName = pathRoute;
+        setRouteMenu(pathName)
+    },[pathRoute])
 
     // navbarMenu 
     const handlerNavMenu = ()=>{
@@ -18,13 +28,13 @@ function Navbar() {
                 <div className="block">
                     <ul className="flex items-center gap-12">
                         <li className="block ">
-                            <Link href='/' className='block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white hover:scale-110'>خانه</Link>
+                            <Link href='/' className={routeMenu === '/' ?"block font-danaBold text-2xl font-extrabold text-white":"block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white hover:scale-110"}>خانه</Link>
                         </li>
                         <li className="block ">
-                            <Link href='/AboutMe' className='block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white hover:scale-110'>درباره من</Link>
+                            <Link href='/AboutMe' className={routeMenu === '/AboutMe' ?"block font-danaBold text-2xl font-extrabold text-white":"block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white hover:scale-110"}>درباره من</Link>
                         </li>
                         <li className="block ">
-                            <Link href='/SampleWork' className='block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white hover:scale-110'>نمونه کار</Link>
+                            <Link href='/SampleWork' className={routeMenu === '/SampleWork' ?"block font-danaBold text-2xl font-extrabold text-white":"block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white hover:scale-110"}>نمونه کار</Link>
                         </li>
                     </ul>
                 </div>
