@@ -1,3 +1,4 @@
+import TopBar from '@/components/modules/TopBar/TopBar'
 import React from 'react'
 
 function Layout({children}) {
@@ -5,7 +6,7 @@ function Layout({children}) {
     <section className="block w-full">
         <div className="block">
             <div className="block">
-                this is sideBar
+               <TopBar/>
                 {children}
             </div>
         </div>
