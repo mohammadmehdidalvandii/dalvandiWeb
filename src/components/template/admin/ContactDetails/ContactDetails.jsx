@@ -22,7 +22,7 @@ function ContactDetails() {
                             <button className='block text-base mt-2 ease-out duration-300 hover:text-green-900'>مشاهده</button>
                         </div>
                         <div className="block">
-                            <span className="block text-lg text-font-default">  ارسال ایمیل :</span>
+                            <span className="block text-lg text-font-default">   ایمیل :</span>
                             <Link href='' className='block text-base mt-2 ease-out duration-300 hover:text-green-900'>ارسال ایمیل</Link>
                         </div>
                         <div className="block">
@@ -44,7 +44,7 @@ function ContactDetails() {
                             <button className='block text-base mt-2 ease-out duration-300 hover:text-green-900'>مشاهده</button>
                         </div>
                         <div className="block">
-                            <span className="block text-lg text-font-default">  ارسال ایمیل :</span>
+                            <span className="block text-lg text-font-default">   ایمیل :</span>
                             <Link href='' className='block text-base mt-2 ease-out duration-300 hover:text-green-900'>ارسال ایمیل</Link>
                         </div>
                         <div className="block">
