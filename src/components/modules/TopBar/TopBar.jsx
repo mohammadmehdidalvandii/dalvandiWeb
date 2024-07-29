@@ -8,7 +8,7 @@ function TopBar() {
             <Link href='/Admin' className='flex items-center justify-center w-[130px] h-12 bg-white text-back text-2xl rounded-lg ease-out duration-300 hover:bg-success hover:text-white'>پیشخوان</Link>
             <Link href='/Admin/Avatar' className='flex items-center justify-center w-[130px] h-12 bg-white text-back text-2xl rounded-lg ease-out duration-300 hover:bg-success hover:text-white'>اواتار</Link>
             <Link href='/Admin/AboutMe' className='flex items-center justify-center w-[130px] h-12 bg-white text-back text-2xl rounded-lg ease-out duration-300 hover:bg-success hover:text-white'>درباه من</Link>
-            <Link href='/' className='flex items-center justify-center w-[130px] h-12 bg-white text-back text-2xl rounded-lg ease-out duration-300 hover:bg-success hover:text-white'>نمونه کار</Link>
+            <Link href='/Admin/WorkMe' className='flex items-center justify-center w-[130px] h-12 bg-white text-back text-2xl rounded-lg ease-out duration-300 hover:bg-success hover:text-white'>نمونه کار</Link>
             <Link href='/' className='flex items-center justify-center w-[130px] h-12 bg-white text-back text-2xl rounded-lg ease-out duration-300 hover:bg-success hover:text-white'>تماس با من</Link>
         </div>
     </section>
