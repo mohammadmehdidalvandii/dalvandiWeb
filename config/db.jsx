@@ -5,7 +5,7 @@ const connectToDB = async ()=>{
         if(mongoose.connections[0].readyState){
             return true;
         }else{
-            await mongoose.connect(process.env.MONGO_URL);
+            await mongoose.connect("mongodb://localhost:27017/dalvandiweb");
             console.log("Connect To DB Successfully ✅")
         }
     } catch (err){

@@ -19,7 +19,7 @@ const schema = new mongoose.Schema({
       },
       role: {
         type: String,
-        default: "ADMIN",
+        default: "USER",
       },
     
       refreshToken: String,
