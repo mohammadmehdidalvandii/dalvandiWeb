@@ -53,7 +53,7 @@ const validPhone = (phone)=>{
 }
 
 // Logic Validation Email
-const validPassword = (Password)=>{
+const validPassword = (password)=>{
     const pattern =
     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/g;
   return pattern.test(password);
