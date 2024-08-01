@@ -10,7 +10,7 @@ const schema = new mongoose.Schema({
         required:true,
     },
     techs:{
-        type:[string],
+        type:[String],
         required:true,
     },
     github:{
@@ -18,7 +18,7 @@ const schema = new mongoose.Schema({
         required:true,
     },
     onlineLink:{
-        type:String,
+        type: String,
         required:true,
     }
 });
