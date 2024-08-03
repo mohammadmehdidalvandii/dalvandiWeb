@@ -44,7 +44,7 @@ function SignIn() {
                 icon:"success",
                 buttons:"ورود به پنل کاربری ",
             }).then(()=>{
-                router.replace('/')
+                router.replace('/Admin')
             })
         } else if(res.status === 422 || res.status === 401){
             showSwal("کاربری با این اطلاعات وجود ندار","error","تلاش مجدد")
