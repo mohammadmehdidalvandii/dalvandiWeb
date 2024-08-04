@@ -14,7 +14,7 @@ function Headline() {
                 <span className="block">محمد مهدی دالوندی</span>
                 <span className="block mt-4">برنامه نویس فرانت اند هستم </span>
             </h1>
-            <Link href='' className="btn-primary mt-12">دانلود رزومه من</Link>
+            <Link href='/assets/mhmdnehdi-dal.pdf' download={true} target="_blank" className="btn-primary mt-12">دانلود رزومه من</Link>
         </div>
       </div>
     </section>
