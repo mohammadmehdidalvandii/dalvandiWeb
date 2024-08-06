@@ -1,7 +1,7 @@
 "use client"
 import WorkCard from '@/components/modules/WorkCard/WorkCard';
-import { showSwal } from '@/utils/helpers';
-import React, { useEffect, useState } from 'react'
+
+import React, { useState } from 'react'
 import swal from 'sweetalert';
 
 
@@ -118,7 +118,24 @@ function WorkDetails({projects}) {
                 <h6 className="block mb-4 text-xl"> نمونه کار ها</h6>
                 <div className="grid sm:grid-cols-1 md:grid-cols-2 h-[500px] overflow-y-scroll gap-6">
                     {projects.map(project=>(
-                        <WorkCard key={project._id} title={project.title}/>
+                        <WorkCard key={project._id} title={project.title}
+                        handlerShowDetails={()=>{
+                            swal({
+                                text:`${project.description}`,
+                                content:{
+                                    element:"a",
+                                    attributes:{
+                                        target:"_blank",
+                                        href:project.onlineLink,
+                                        text:"نمایش انلاین",
+                                        className:"text-primary-default hover:text-secondary"
+                                    },
+                                },
+                                buttons:"باشه"
+                            })
+                        }
+                        }
+                        />
                     ))}
 
                 </div>
