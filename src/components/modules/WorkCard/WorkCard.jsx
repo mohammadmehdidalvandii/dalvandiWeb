@@ -1,10 +1,10 @@
 import React from "react";
 
-function WorkCard() {
+function WorkCard({title}) {
   return (
-    <div className="block bg-white p-3 rounded-md text-back">
+    <div className="block h-2/3 bg-white p-3 rounded-md text-back">
       <img src="/assets/images/work-1.png" alt="" className="block" />
-      <h6 className="block text-xl my-3">سایت آموزشی Eduport</h6>
+      <h6 className="block text-xl my-3">{title}</h6>
       <div className="flex gap-6">
         <button className="flex items-center justify-center w-[130px] h-10 bg-green-700 text-white rounded-md ease-out duration-300 hover:bg-green-900">
           ویرایش

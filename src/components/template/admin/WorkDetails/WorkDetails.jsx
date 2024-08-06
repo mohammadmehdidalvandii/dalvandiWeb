@@ -1,14 +1,17 @@
 "use client"
+import WorkCard from '@/components/modules/WorkCard/WorkCard';
 import { showSwal } from '@/utils/helpers';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import swal from 'sweetalert';
 
-function WorkDetails() {
+
+function WorkDetails({projects}) {
     const [title , setTitle] = useState("");
     const [description , setDescription] = useState("");
     const [techs , setTechs] = useState([""]);
     const [github , setGithub] = useState("");
     const [onlineLink , setOnlineLink] = useState("");
+
 
     const handlerAddSampleWork = async (e,)=>{
         e.preventDefault();
@@ -114,34 +117,10 @@ function WorkDetails() {
             <div className="box mt-8">
                 <h6 className="block mb-4 text-xl"> نمونه کار ها</h6>
                 <div className="grid sm:grid-cols-1 md:grid-cols-2 h-[500px] overflow-y-scroll gap-6">
-                   
-                    <div className="block bg-white p-3 rounded-md text-back">
-                        <img src="/assets/images/work-1.png" alt="" className="block" />
-                        <h6 className="block text-xl my-3">سایت آموزشی Eduport</h6>
-                        <div className="flex gap-6">
-                            <button className="flex items-center justify-center w-[130px] h-10 bg-green-700 text-white rounded-md ease-out duration-300 hover:bg-green-900">ویرایش</button>
-                            <button className="flex items-center justify-center w-[130px] h-10 bg-back text-white rounded-md ease-out duration-300 hover:bg-success">جزئیات</button>
-                            <button className="flex items-center justify-center w-[130px] h-10 bg-primary-default text-white rounded-md ease-out duration-300 hover:bg-primary-100">حذف</button>
-                        </div>
-                    </div>
-                    <div className="block bg-white p-3 rounded-md text-back">
-                        <img src="/assets/images/work-1.png" alt="" className="block" />
-                        <h6 className="block text-xl my-3">سایت آموزشی Eduport</h6>
-                        <div className="flex gap-6">
-                            <button className="flex items-center justify-center w-[130px] h-10 bg-green-700 text-white rounded-md ease-out duration-300 hover:bg-green-900">ویرایش</button>
-                            <button className="flex items-center justify-center w-[130px] h-10 bg-back text-white rounded-md ease-out duration-300 hover:bg-success">جزئیات</button>
-                            <button className="flex items-center justify-center w-[130px] h-10 bg-primary-default text-white rounded-md ease-out duration-300 hover:bg-primary-100">حذف</button>
-                        </div>
-                    </div>
-                    <div className="block bg-white p-3 rounded-md text-back">
-                        <img src="/assets/images/work-1.png" alt="" className="block" />
-                        <h6 className="block text-xl my-3">سایت آموزشی Eduport</h6>
-                        <div className="flex gap-6">
-                            <button className="flex items-center justify-center w-[130px] h-10 bg-green-700 text-white rounded-md ease-out duration-300 hover:bg-green-900">ویرایش</button>
-                            <button className="flex items-center justify-center w-[130px] h-10 bg-back text-white rounded-md ease-out duration-300 hover:bg-success">جزئیات</button>
-                            <button className="flex items-center justify-center w-[130px] h-10 bg-primary-default text-white rounded-md ease-out duration-300 hover:bg-primary-100">حذف</button>
-                        </div>
-                    </div>
+                    {projects.map(project=>(
+                        <WorkCard key={project._id} title={project.title}/>
+                    ))}
+
                 </div>
             </div>
         </div>
