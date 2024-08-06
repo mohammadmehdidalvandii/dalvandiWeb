@@ -41,40 +41,40 @@ export async function PUT (req){
 }
 
 
-// export async function POST (req){
-//     try{
-//         connectToDB();
-//         const body = await req.json();
+export async function POST (req){
+    try{
+        connectToDB();
+        const body = await req.json();
 
-//         const {
-//             name,
-//             favorite,
-//             location,
-//             linkInstagram,
-//             linkGithub,
-//             linkTelegram,
-//             linkDin,
-//    } = body;
+        const {
+            name,
+            favorite,
+            location,
+            linkInstagram,
+            linkGithub,
+            linkTelegram,
+            linkDin,
+   } = body;
 
-//    const avatar = await AvatarModel.create({
-//             name,
-//             favorite,
-//             location,
-//             linkInstagram,
-//             linkGithub,
-//             linkTelegram,
-//             linkDin,
-//    });
+   const avatar = await AvatarModel.create({
+            name,
+            favorite,
+            location,
+            linkInstagram,
+            linkGithub,
+            linkTelegram,
+            linkDin,
+   });
 
-//    return Response.json(
-//     {message:"Avatar Created successfully ✅"},
-//     {status:201}
-//    )
+   return Response.json(
+    {message:"Avatar Created successfully ✅"},
+    {status:201}
+   )
 
-//     } catch(err){
-//         return Response.json(
-//             {message :"Error Avatar =>" ,err},
-//             {status:500}
-//         )
-//     }
-// }
+    } catch(err){
+        return Response.json(
+            {message :"Error Avatar =>" ,err},
+            {status:500}
+        )
+    }
+}
