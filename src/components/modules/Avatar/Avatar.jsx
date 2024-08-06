@@ -5,8 +5,8 @@ import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
 import AvatarModel from "@/models/Avatar";
 
 const Avatar = async () => {
-  const avatar = await AvatarModel.find({});
-  console.log("AVATAR ==>", avatar);
+  const avatar = await AvatarModel.find();
+
 
   return (
     <section className="block text-center  bg-success rounded-lg border border-font-100 p-8 text-white">
