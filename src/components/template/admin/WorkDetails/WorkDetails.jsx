@@ -114,15 +114,7 @@ function WorkDetails() {
             <div className="box mt-8">
                 <h6 className="block mb-4 text-xl"> نمونه کار ها</h6>
                 <div className="grid sm:grid-cols-1 md:grid-cols-2 h-[500px] overflow-y-scroll gap-6">
-                    <div className="block bg-white p-3 rounded-md text-back">
-                        <img src="/assets/images/work-1.png" alt="" className="block" />
-                        <h6 className="block text-xl my-3">سایت آموزشی Eduport</h6>
-                        <div className="flex gap-6">
-                            <button className="flex items-center justify-center w-[130px] h-10 bg-green-700 text-white rounded-md ease-out duration-300 hover:bg-green-900">ویرایش</button>
-                            <button className="flex items-center justify-center w-[130px] h-10 bg-back text-white rounded-md ease-out duration-300 hover:bg-success">جزئیات</button>
-                            <button className="flex items-center justify-center w-[130px] h-10 bg-primary-default text-white rounded-md ease-out duration-300 hover:bg-primary-100">حذف</button>
-                        </div>
-                    </div>
+                   
                     <div className="block bg-white p-3 rounded-md text-back">
                         <img src="/assets/images/work-1.png" alt="" className="block" />
                         <h6 className="block text-xl my-3">سایت آموزشی Eduport</h6>
