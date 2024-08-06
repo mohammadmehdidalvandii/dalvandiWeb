@@ -1,80 +1,67 @@
 import connectToDB from "@/config/db";
-import AvatarModel from '@/models/Avatar';
+import AvatarModel from "@/models/Avatar";
 
-export async function PUT (req){
-    try {
-        connectToDB();
-        const body = req.json();
+import {writeFile } from "fs/promises"
+import path from "path";
 
-        const {
-            name,
-            favorite,
-            location,
-            linkInstagram,
-            linkGithub,
-            linkTelegram,
-            linkDin,
-        } = body;
+export async function POST(req) {
+  try {
+    connectToDB();
 
-        const updateAvatar = await AvatarModel.findByIdAndUpdate(req.params.id, {
-            name,
-            favorite,
-            location,
-            linkInstagram,
-            linkGithub,
-            linkTelegram,
-            linkDin,
-          }, { new: true });
+    const formData = await req.formData();
 
-   return Response.json(
-    {message:"Avatar UPDATE is Successfully ✅" , data:updateAvatar},
-    {status:200}
-   )
+    console.log("formData => " ,formData)
 
-    } catch(err){
-        console.log("Error put =>" , err)
-        return Response.json(
-            {message:"Error Avatar => ", err},
-            {status:500}
-        )
-    }
+    const name = formData.get("name");
+    const img = formData.get("img")
+    const favorite = formData.get("favorite");
+    const location = formData.get("location");
+    const linkInstagram = formData.get("linkInstagram");
+    const linkGithub = formData.get("linkGithub");
+    const linkTelegram = formData.get("linkTelegram");
+    const linkDin = formData.get("linkDin");
+
+
+    const buffer = Buffer.from(await img.arrayBuffer());
+    const fileName = Date.now() + img.name; 
+    const imgPath = path.join(process.cwd(), "public/uploads/" + fileName);
+
+    await writeFile(imgPath , buffer);
+
+    const avatar = await AvatarModel.create({
+        name,
+        img:`http://localhost:3000/uploads/${fileName}`,
+        favorite,
+        location,
+        linkInstagram,
+        linkGithub,
+        linkTelegram,
+        linkDin,
+    });
+
+    return Response.json(
+        {message:"Created Avatar is Successfully ✅" , data:avatar},
+        {status: 201}
+    )
+
+
+  } catch (err) {
+    console.log("Error => " , err)
+    return Response.json({ message: "Error Avatar =>", err }, { status: 500 });
+  }
 }
 
 
-export async function POST (req){
-    try{
-        connectToDB();
-        const body = await req.json();
-
-        const {
-            name,
-            favorite,
-            location,
-            linkInstagram,
-            linkGithub,
-            linkTelegram,
-            linkDin,
-   } = body;
-
-   const avatar = await AvatarModel.create({
-            name,
-            favorite,
-            location,
-            linkInstagram,
-            linkGithub,
-            linkTelegram,
-            linkDin,
-   });
-
-   return Response.json(
-    {message:"Avatar Created successfully ✅"},
-    {status:201}
-   )
-
-    } catch(err){
-        return Response.json(
-            {message :"Error Avatar =>" ,err},
-            {status:500}
-        )
+// Image Uploader
+export async function PUT(req) {
+    const formData = await req.formData();
+    const img = formData.get("img");
+  
+    // Validation
+    if (!img) {
+      return Response.json(
+        { message: "Product has not image !!" },
+        { status: 400 }
+      );
     }
 }
