@@ -7,8 +7,9 @@ import swal from 'sweetalert';
 
 function WorkDetails({projects}) {
     const [title , setTitle] = useState("");
+    const [img , setImg] = useState({});
     const [description , setDescription] = useState("");
-    const [techs , setTechs] = useState([""]);
+    const [techs , setTechs] = useState("");
     const [github , setGithub] = useState("");
     const [onlineLink , setOnlineLink] = useState("");
 
@@ -18,22 +19,20 @@ function WorkDetails({projects}) {
 
         // Validations
     
-        const project = {
-            title,
-            description,
-            techs,
-            github,
-            onlineLink,
-        };
+        const formData = new FormData();
+
+        formData.append("title" , title )
+        formData.append("img" ,img )
+        formData.append("description" , description)
+        formData.append("techs" , techs.split(","))
+        formData.append("github" , github)
+        formData.append("onlineLink" , onlineLink )
 
 
         const res  = await fetch('/api/projects' , {
-            method:"POST",
-            headers:{"Content-Type":"application/json"},
-            body:JSON.stringify(project),
+            method:"POST",  
+            body:formData,
         })
-
-        const data =await res.json();
 
         if(res.status === 201){
             swal({
@@ -42,6 +41,7 @@ function WorkDetails({projects}) {
                 buttons:"باشه",
             }).then(()=>{
                 setTitle("")
+                setImg({})
                 setDescription("")
                 setTechs("")
                 setGithub("")
@@ -77,7 +77,7 @@ function WorkDetails({projects}) {
                             className="w-full h-40 rounded-md outline-none border-none text-back pt-2 pr-2" />
                         </div>
                         <div className="block mb-4">
-                            <span className="block mb-2 text-lg">(هر تکنولوژی تایید کنید) تکنولوژِی های</span>
+                            <span className="block mb-2 text-lg">( هر تکنولوژی با `,` جدا کنید) تکنولوژِی های</span>
                             <input 
                             type="text"
                             value={techs}
@@ -103,12 +103,11 @@ function WorkDetails({projects}) {
                             className="w-full h-10 rounded-md outline-none border-none text-back pr-1" />
                         </div>
                     <div className="block mb-4">
-                            <span className="block mb-2 text-lg">فایل پروژه</span>
-                            <input type="file" className="w-full h-10 rounded-md outline-none border-none text-back pr-1" />
-                        </div>
-                    <div className="block mb-4">
                             <span className="block mb-2 text-lg">عکس پروژه</span>
-                            <input type="file" className="w-full h-10 rounded-md outline-none border-none text-back pr-1" />
+                            <input 
+                            onChange={event =>setImg(event.target.files[0])}
+                            type="file"
+                             className="w-full h-10 rounded-md outline-none border-none text-back pr-1" />
                         </div>
                     </div>
                     <button className="btn-primary w-full col-span-2" onClick={handlerAddSampleWork}>افزودن</button>
@@ -118,7 +117,7 @@ function WorkDetails({projects}) {
                 <h6 className="block mb-4 text-xl"> نمونه کار ها</h6>
                 <div className="grid sm:grid-cols-1 md:grid-cols-2 h-[500px] overflow-y-scroll gap-6">
                     {projects.map(project=>(
-                        <WorkCard key={project._id} title={project.title}
+                        <WorkCard key={project._id} {...project}
                         handlerShowDetails={()=>{
                             swal({
                                 text:`${project.description}`,
