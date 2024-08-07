@@ -2,8 +2,10 @@ import Card from '@/components/modules/Card/Card'
 import Title from '@/components/modules/Title/Title'
 import React from 'react'
 import { FaSearch } from 'react-icons/fa'
+import ProjectModel from '@/models/Project';
 
-function Work() {
+async function Work() {
+    const projects = await ProjectModel.find({});
   return (
     <section className="block w-full mb-8">
         <div className="block">
@@ -19,9 +21,12 @@ function Work() {
                         </span>
                     </div>
                     <div className="grid mt-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                     <Card/>
-                     <Card/>
-                     <Card/>
+                        {projects.map(project=>
+                        // console.log("project =>" ,project._id)
+                        <Card key={project._id} 
+                        img={project.img}
+                        />
+                        )}
                     </div>
                     <button className="btn-primary mt-12 mx-auto">مشاهده بیشتر</button>
                 </div>
