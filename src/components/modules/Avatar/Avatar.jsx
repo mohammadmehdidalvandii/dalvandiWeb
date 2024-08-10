@@ -17,7 +17,7 @@ const Avatar = async () => {
             {item.name}
           </h4>
           <img
-            src="/assets/images/user.webp"
+            src={item.img}
             alt=""
             className="block my-4 rounded-xl"
           />
