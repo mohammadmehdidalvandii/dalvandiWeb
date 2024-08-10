@@ -22,8 +22,8 @@ async function Work() {
                     </div>
                     <div className="grid mt-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                         {projects.map(project=>
-                        // console.log("project =>" ,project.onlineLink)
                         <Card key={project._id}
+                            id={project._id}
                             title={project.title}
                              img={project.img}
                             onlineLink={project.onlineLink}
