@@ -24,7 +24,7 @@ function WorkDetails({projects}) {
         formData.append("title" , title )
         formData.append("img" ,img )
         formData.append("description" , description)
-        formData.append("techs" , techs.split(","))
+        formData.append("techs" , techs.split("-"))
         formData.append("github" , github)
         formData.append("onlineLink" , onlineLink )
 
