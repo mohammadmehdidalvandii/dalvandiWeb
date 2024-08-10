@@ -66,16 +66,14 @@ function Navbar() {
                             <Link href='/' className='block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white'>خانه</Link>
                         </li>
                         <li className="block mb-3">
-                            <Link href='/' className='block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white'>درباره من</Link>
+                            <Link href='/AboutMe' className='block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white'>درباره من</Link>
                         </li>
                         <li className="block mb-3">
-                            <Link href='/' className='block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white'>نمونه کار</Link>
+                            <Link href='/SampleWork' className='block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white'>نمونه کار</Link>
                         </li>
+                        
                         <li className="block mb-3">
-                            <Link href='/' className='block font-danaBold text-2xl font-extrabold ease-out duration-300 hover:text-white'>رزومه</Link>
-                        </li>
-                        <li className="block mb-3">
-                        <Link href='/' className='btn-primary'>تماس با من</Link>
+                        <Link href='/Contact' className='btn-primary'>تماس با من</Link>
                         </li>
                 </ul>
                 )}
