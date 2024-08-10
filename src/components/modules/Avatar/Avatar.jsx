@@ -3,10 +3,12 @@ import React from "react";
 import { BsInstagram } from "react-icons/bs";
 import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
 import AvatarModel from "@/models/Avatar";
+import connectToDB from "@/config/db";
 
 const Avatar = async () => {
-  const avatar = await AvatarModel.find();
-
+  await connectToDB()
+  const avatar = await AvatarModel.find({}).lean();
+  console.log("avatar" , avatar)
 
   return (
     <section className="block text-center  bg-success rounded-lg border border-font-100 p-8 text-white">
