@@ -40,18 +40,39 @@ function WorkDetails({projects}) {
                 icons:"success",
                 buttons:"باشه",
             }).then(()=>{
-                setTitle("")
-                setImg({})
-                setDescription("")
-                setTechs("")
-                setGithub("")
-                setOnlineLink("")
+                location.reload();
             })
         } else if(res.status === 422 || res.status === 419){
             showSwal("اطلاعات به صورت نادرست وارد شده است","error","تلاش مجدد")
         }
     }
 
+    // removed project
+
+    const handlerRemoveProject= (projectID)=>{
+        swal({
+            title:"آیااز حذف پروژه اطمینان دارید ؟",
+            icon:"warning",
+            buttons:["نه","آره"]
+        }).then(async (result)=>{
+            if(result){
+                const res = await fetch(`/api/projects/${projectID}`,{
+                    method:"DELETE",
+                    headers:{"Content-Type":"application/json"},
+                })
+
+                if(res.status === 200){
+                    swal({
+                        title:"پیام با موفقیت حذف گردید",
+                        icon:"success",
+                        buttons:"فهمیدم"
+                    }).then(()=>{
+                        location.reload();
+                    })
+                }
+            }
+        })
+    }
 
   return (
     <section className="block mb-8">
@@ -118,6 +139,7 @@ function WorkDetails({projects}) {
                 <div className="grid sm:grid-cols-1 md:grid-cols-2 h-[500px] overflow-y-scroll gap-6">
                     {projects.map(project=>(
                         <WorkCard key={project._id} {...project}
+                        handlerRemoveProject={()=>handlerRemoveProject(project._id)}
                         handlerShowDetails={()=>{
                             swal({
                                 text:`${project.description}`,

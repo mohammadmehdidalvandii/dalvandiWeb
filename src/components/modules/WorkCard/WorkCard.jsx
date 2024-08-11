@@ -1,6 +1,6 @@
 import React from "react";
 
-function WorkCard({title, img ,handlerShowDetails}) {
+function WorkCard({title, img , id ,handlerShowDetails , handlerRemoveProject}) {
   return (
     <div className="block h-2/3 bg-white p-3 rounded-md text-back">
       <img src={img} alt="" className="block" />
@@ -14,7 +14,9 @@ function WorkCard({title, img ,handlerShowDetails}) {
         >
           جزئیات
         </button>
-        <button className="flex items-center justify-center w-[130px] h-10 bg-primary-default text-white rounded-md ease-out duration-300 hover:bg-primary-100">
+        <button className="flex items-center justify-center w-[130px] h-10 bg-primary-default text-white rounded-md ease-out duration-300 hover:bg-primary-100"
+        onClick={handlerRemoveProject}
+        >
           حذف
         </button>
       </div>
