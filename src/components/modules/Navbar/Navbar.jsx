@@ -14,6 +14,7 @@ function Navbar() {
     useEffect(()=>{
         const pathName = pathRoute;
         setRouteMenu(pathName)
+        setNavMenu(false)
     },[pathRoute])
 
     // navbarMenu 
