@@ -30,7 +30,7 @@ export async function POST(req) {
 
     const avatar = await AvatarModel.create({
         name,
-        img:`http://localhost:3000/uploads/${fileName}`,
+        img:`https://dalvandi-web.liara.run/uploads/${fileName}`,
         favorite,
         location,
         linkInstagram,

@@ -25,7 +25,7 @@ export async function POST(req) {
 
     const project = await ProjectModel.create({
         title,
-        img:`http://localhost:3000/uploads/${fileName}`,
+        img:`https://dalvandi-web.liara.run/uploads/${fileName}`,
         description,
         techs,
         github,

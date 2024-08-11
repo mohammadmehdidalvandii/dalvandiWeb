@@ -21,7 +21,7 @@ export async function POST(req) {
 
     const skill = await SkillModel.create({
         name,
-        img:`http://localhost:3000/uploads/${fileName}`,
+        img:`https://dalvandi-web.liara.run/uploads/${fileName}`,
     });
 
     return Response.json(
