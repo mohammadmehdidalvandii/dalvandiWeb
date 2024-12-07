@@ -24,7 +24,7 @@ export async function POST(req) {
         img:`https://dalvandi-web.liara.run/uploads/${fileName}`,
     });
 
-    return Response.json(
+    return Response.json( 
         {message:"Created Skill is Successfully ✅" , data:skill},
         {status:201}
     )

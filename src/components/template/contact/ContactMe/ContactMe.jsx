@@ -21,7 +21,7 @@ function ContactMe() {
 
         const message = {username , phone , email , request} ;
 
-        const res  = await fetch("/api/messages",{
+        const res  = await fetch("/api/message",{
             method:"POST",
             headers:{"Content-Type" :"application/json"},
             body:JSON.stringify(message),
@@ -56,7 +56,7 @@ function ContactMe() {
             <div className="block mt-8">
                 <div className="box xs:w-full sm:w-[400px]">
                     <p className="block my-3 text-font-100">اگر پیامی دارید برام ارسال کنید پروژه درخواست همکاری ممنونم </p>
-                    <form action="#" className="block w-full">
+                    <form    className="block w-full">
                         <div className="block mb-3">
                             <span className="block text-font-100 text-lg mb-2">نام و نام خانوادگی *</span>
                             <input 
@@ -93,7 +93,7 @@ function ContactMe() {
                             className="black xs:w-full sm:w-[370px] h-48 rounded-md pr-3 pt-3 text-back outline-none border-none" 
                             placeholder='متن شما'/>
                         </div>
-                        <button className="btn-primary w-full" onClick={handlerSendMessage}>ارسال</button>
+                        <button className="btn-primary w-full" onClick={handlerSendMessage} >ارسال</button>
                     </form>
                 </div>
             </div>
